@@ -420,7 +420,20 @@ Session.prototype = {
     promise.catch(function onFailure (e) {
       var statusCode;
       if (e instanceof SIP.Exceptions.GetDescriptionError) {
-        statusCode = 500;
+        self.logger.warn("Attempting to send a 200ok even with SDP error");
+        request.reply(
+          200,
+          null,
+          ['Contact: ' + self.contact],
+          null,
+          function() {
+              self.status = C.STATUS_WAITING_FOR_ACK;
+              self.setInvite2xxTimer(request, null);
+              self.setACKTimer();
+
+          }
+        );
+        return;
       } else if (e instanceof SIP.Exceptions.RenegotiationError) {
         self.emit('renegotiationError', e);
         self.logger.warn(e);
@@ -489,6 +502,12 @@ Session.prototype = {
           this.terminated(request, SIP.C.causes.BYE);
         }
         break;
+      case SIP.C.UPDATE:
+          if(this.status === C.STATUS_CONFIRMED) {
+              this.logger.log('re-INVITE via UPDATE received');
+              request.reply(200);
+          }
+          break;
       case SIP.C.INVITE:
         if(this.status === C.STATUS_CONFIRMED) {
           this.logger.log('re-INVITE received');
