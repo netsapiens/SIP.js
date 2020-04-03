@@ -1,16 +1,19 @@
 window.SIPHelper = {
-  createResponse: function createResponse(request, status_code, reason_phrase, body) {
+  createResponse: function createResponse(request, statusCode, reasonPhrase, body, contentDisposition) {
     var response = new SIP.IncomingResponse(request.ua);
     var parsed, header, length, idx;
 
-    response.status_code = status_code;
-    response.reason_phrase = (reason_phrase || '').toString();
+    response.statusCode = statusCode;
+    response.reasonPhrase = (reasonPhrase || '').toString();
 
     // Let's hope we don't actually need a raw string of the response.
-    response.data = null;
+    response.data = undefined;
 
     response.body = (body || 'foo').toString();
-    response.setHeader('Content-Type', 'rps');
+    response.setHeader('Content-Type', 'text/plain');
+    if (contentDisposition) {
+      response.setHeader('Content-Disposition', contentDisposition);
+    }
 
     /*
      * We aren't going to parse a bunch of strings,
@@ -19,10 +22,11 @@ window.SIPHelper = {
     response.method = request.method;
     response.from = request.from;
     response.to = request.to;
-    response.call_id = request.call_id;
+    response.callId = request.callId;
     response.cseq = request.cseq;
-    response.from_tag = request.from.getParam('tag');
-    response.to_tag = 'uas-to-tag';
+    response.fromTag = request.from.getParam('tag');
+    response.toTag = 'uas-to-tag';
+    response.viaBranch = request.branch
 
     /*
      * In addition to properties, some other headers are
@@ -44,11 +48,7 @@ window.SIPHelper = {
     response.setHeader('to', request.getHeader('to'));
 
     // Transaction ACK
-    response.transaction = {
-      sendACK: function(options) {
-        return options
-      }
-    };
+    response.transaction = request.transaction;
 
     return response;
   }
