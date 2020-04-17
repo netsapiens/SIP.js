@@ -159,16 +159,26 @@ SessionDescriptionHandler.prototype = Object.create(SIP.SessionDescriptionHandle
     // GUM and set myself up
     self.logger.log('acquiring local media');
     // TODO: Constraints should be named MediaStreamConstraints
-    return this.acquire(self.constraints)
-      .then(function acquireSucceeded(streams) {
+    var returnPromiss;
+
+    if (options.stream)
+    {
+      returnPromiss =  new SIP.Utils.Promise(function(resolve) {
+          resolve([options.stream]);
+      });
+    }
+    else {
+      returnPromiss = this.acquire(self.constraints).then(function acquireSucceeded(streams) {
         self.logger.log('acquired local media streams');
         return streams;
       }, function acquireFailed(err) {
         self.logger.error('unable to acquire streams');
         self.logger.error(err);
         throw err;
-      })
-      .then(function addStreams(streams) {
+      });
+    }
+
+    return returnPromiss.then(function addStreams(streams) {
         try {
           streams = [].concat(streams);
           streams.forEach(function (stream) {
