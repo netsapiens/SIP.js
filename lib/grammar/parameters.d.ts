@@ -3,15 +3,15 @@
  */
 export declare class Parameters {
     parameters: {
-        [name: string]: string;
+        [name: string]: string | null;
     };
     constructor(parameters: {
-        [name: string]: string;
+        [name: string]: string | number | null | undefined;
     });
-    setParam(key: string, value: any): void;
-    getParam(key: string): string | undefined;
+    setParam(key: string, value: string | number | null | undefined): void;
+    getParam(key: string): string | null | undefined;
     hasParam(key: string): boolean;
-    deleteParam(parameter: string): any;
+    deleteParam(key: string): string | null | undefined;
     clearParams(): void;
 }
 //# sourceMappingURL=parameters.d.ts.map

@@ -191,6 +191,11 @@ export declare class SessionDescriptionHandler implements SessionDescriptionHand
      */
     protected setRemoteTrack(track: MediaStreamTrack): void;
     /**
+     * Depending on the current signaling state and the session hold state, update transceiver direction.
+     * @param options - Session description handler options.
+     */
+    protected updateDirection(options?: SessionDescriptionHandlerOptions): Promise<void>;
+    /**
      * Called when ICE gathering completes and resolves any waiting promise.
      */
     protected iceGatheringComplete(): void;

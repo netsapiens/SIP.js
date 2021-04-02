@@ -11,9 +11,11 @@ import { UserAgent } from "./user-agent";
  */
 export declare class Registerer {
     private static readonly defaultExpires;
+    private static readonly defaultRefreshFrequency;
     private disposed;
     private id;
     private expires;
+    private refreshFrequency;
     private logger;
     private options;
     private request;

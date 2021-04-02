@@ -5,6 +5,16 @@
 ```ts
 
 // @public
+export class Ack {
+    // Warning: (ae-forgotten-export) The symbol "IncomingAckRequest" needs to be exported by the entry point index.d.ts
+    //
+    // @internal
+    constructor(incomingAckRequest: IncomingAckRequest);
+    // Warning: (ae-forgotten-export) The symbol "IncomingRequestMessage" needs to be exported by the entry point index.d.ts
+    get request(): IncomingRequestMessage;
+}
+
+// @public
 export interface BodyAndContentType {
     body: string;
     contentType: string;
@@ -19,7 +29,6 @@ export class Bye {
     // Warning: (ae-forgotten-export) The symbol "ResponseOptions" needs to be exported by the entry point index.d.ts
     accept(options?: ResponseOptions): Promise<void>;
     reject(options?: ResponseOptions): Promise<void>;
-    // Warning: (ae-forgotten-export) The symbol "IncomingRequestMessage" needs to be exported by the entry point index.d.ts
     get request(): IncomingRequestMessage;
 }
 
@@ -80,7 +89,6 @@ export class Invitation extends Session {
     // @internal
     constructor(userAgent: UserAgent, incomingInviteRequest: IncomingInviteRequest);
     accept(options?: InvitationAcceptOptions): Promise<void>;
-    // @internal
     get autoSendAnInitialProvisionalResponse(): boolean;
     get body(): string | undefined;
     dispose(): Promise<void>;
@@ -100,6 +108,7 @@ export class Invitation extends Session {
 
 // @public
 export interface InvitationAcceptOptions {
+    extraHeaders?: Array<string>;
     sessionDescriptionHandlerModifiers?: Array<SessionDescriptionHandlerModifier>;
     sessionDescriptionHandlerOptions?: SessionDescriptionHandlerOptions;
 }
@@ -350,6 +359,7 @@ export interface RegistererOptions {
         toDisplayName?: string;
         toUri?: URI;
     };
+    refreshFrequency?: number;
     regId?: number;
     registrar?: URI;
 }
@@ -441,8 +451,6 @@ export abstract class Session {
     message(options?: SessionMessageOptions): Promise<OutgoingMessageRequest>;
     // @internal
     _message(delegate?: OutgoingRequestDelegate, options?: RequestOptions): Promise<OutgoingMessageRequest>;
-    // Warning: (ae-forgotten-export) The symbol "IncomingAckRequest" needs to be exported by the entry point index.d.ts
-    //
     // @internal
     protected onAckRequest(request: IncomingAckRequest): Promise<void>;
     // @internal
@@ -518,6 +526,7 @@ export interface SessionByeOptions {
 
 // @public
 export interface SessionDelegate {
+    onAck?(ack: Ack): void;
     onBye?(bye: Bye): void;
     onInfo?(info: Info): void;
     onInvite?(request: IncomingRequestMessage, response: string, statusCode: number): void;
@@ -813,6 +822,10 @@ export interface UserAgentOptions {
     // @deprecated (undocumented)
     autoStart?: boolean;
     autoStop?: boolean;
+    contactName?: string;
+    contactParams?: {
+        [name: string]: string;
+    };
     delegate?: UserAgentDelegate;
     displayName?: string;
     forceRport?: boolean;
@@ -822,8 +835,6 @@ export interface UserAgentOptions {
     hackIpInContact?: boolean | string;
     // @deprecated
     hackViaTcp?: boolean;
-    // @deprecated
-    hackWssInTransport?: boolean;
     logBuiltinEnabled?: boolean;
     logConfiguration?: boolean;
     logConnector?: LogConnector;
@@ -834,6 +845,7 @@ export interface UserAgentOptions {
     reconnectionAttempts?: number;
     // @deprecated (undocumented)
     reconnectionDelay?: number;
+    sendInitialProvisionalResponse?: boolean;
     sessionDescriptionHandlerFactory?: SessionDescriptionHandlerFactory;
     sessionDescriptionHandlerFactoryOptions?: object;
     sipExtension100rel?: SIPExtension;

@@ -1,4 +1,4 @@
-declare const version = "0.17.1";
+declare const version = "0.20.0";
 declare const name = "sip.js";
 export { name, version };
 export * from "./api";

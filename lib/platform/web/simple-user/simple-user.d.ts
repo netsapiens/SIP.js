@@ -17,6 +17,7 @@ export declare class SimpleUser {
     private connectRequested;
     private logger;
     private held;
+    private muted;
     private options;
     private registerer;
     private registerRequested;
@@ -188,6 +189,8 @@ export declare class SimpleUser {
     private attemptReconnection;
     /** Helper function to remove media from html elements. */
     private cleanupMedia;
+    /** Helper function to enable/disable media tracks. */
+    private enableReceiverTracks;
     /** Helper function to enable/disable media tracks. */
     private enableSenderTracks;
     /**
