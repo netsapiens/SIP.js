@@ -24,7 +24,7 @@
     "no-console": "error",
     "prettier/prettier": "error",
     // "@typescript-eslint/explicit-member-accessibility": "error",
-    "@typescript-eslint/member-ordering": "error",
+    // "@typescript-eslint/member-ordering": "error",
     "tree-shaking/no-side-effects-in-initialization": 2,
     "prettier/prettier": 0
   },

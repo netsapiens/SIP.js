@@ -20,7 +20,7 @@ export class DigestAuthentication {
   private logger: Logger;
   private ha1: string | undefined;
   private username: string | undefined;
-  private password: string | Function | undefined;
+  private password: string | (() => string) | undefined;
   private cnonce: string | undefined;
   private nc: number;
   private ncHex: string;
@@ -43,7 +43,7 @@ export class DigestAuthentication {
     loggerFactory: LoggerFactory,
     ha1: string | undefined,
     username: string | undefined,
-    password: string | Function | undefined
+    password: string | (() => string) | undefined
   ) {
     this.logger = loggerFactory.getLogger("sipjs.digestauthentication");
     this.username = username;
