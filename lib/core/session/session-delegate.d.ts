@@ -1,4 +1,11 @@
-import { IncomingAckRequest, IncomingByeRequest, IncomingInfoRequest, IncomingInviteRequest, IncomingMessageRequest, IncomingNotifyRequest, IncomingPrackRequest, IncomingReferRequest } from "../messages";
+import { IncomingAckRequest } from "../messages/methods/ack.js";
+import { IncomingByeRequest } from "../messages/methods/bye.js";
+import { IncomingInfoRequest } from "../messages/methods/info.js";
+import { IncomingInviteRequest } from "../messages/methods/invite.js";
+import { IncomingMessageRequest } from "../messages/methods/message.js";
+import { IncomingNotifyRequest } from "../messages/methods/notify.js";
+import { IncomingPrackRequest } from "../messages/methods/prack.js";
+import { IncomingReferRequest } from "../messages/methods/refer.js";
 /**
  * Session delegate.
  * @public
@@ -68,4 +75,3 @@ export interface SessionDelegate {
      */
     onRefer?(request: IncomingReferRequest): void;
 }
-//# sourceMappingURL=session-delegate.d.ts.map

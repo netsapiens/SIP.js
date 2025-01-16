@@ -1,8 +1,13 @@
-import { IncomingRequestMessage, OutgoingRequestMessage, OutgoingSubscribeRequest, OutgoingSubscribeRequestDelegate, RequestOptions } from "../messages";
-import { Subscription, SubscriptionDelegate, SubscriptionState } from "../subscription";
-import { UserAgentCore } from "../user-agent-core/user-agent-core";
-import { Dialog } from "./dialog";
-import { DialogState } from "./dialog-state";
+import { IncomingRequestMessage } from "../messages/incoming-request-message.js";
+import { OutgoingRequestMessage } from "../messages/outgoing-request-message.js";
+import { OutgoingSubscribeRequest } from "../messages/methods/subscribe.js";
+import { OutgoingSubscribeRequestDelegate } from "../messages/methods/subscribe.js";
+import { RequestOptions } from "../messages/outgoing-request.js";
+import { Subscription, SubscriptionState } from "../subscription/subscription.js";
+import { SubscriptionDelegate } from "../subscription/subscription-delegate.js";
+import { UserAgentCore } from "../user-agent-core/user-agent-core.js";
+import { Dialog } from "./dialog.js";
+import { DialogState } from "./dialog-state.js";
 /**
  * Subscription Dialog.
  * @remarks
@@ -118,4 +123,3 @@ export declare class SubscriptionDialog extends Dialog implements Subscription {
      */
     private timerN;
 }
-//# sourceMappingURL=subscription-dialog.d.ts.map

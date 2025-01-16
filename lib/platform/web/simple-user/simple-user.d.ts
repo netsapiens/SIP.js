@@ -1,6 +1,10 @@
-import { InvitationAcceptOptions, InviterInviteOptions, InviterOptions, RegistererOptions, RegistererRegisterOptions, RegistererUnregisterOptions } from "../../../api";
-import { SimpleUserDelegate } from "./simple-user-delegate";
-import { SimpleUserOptions } from "./simple-user-options";
+import { InvitationAcceptOptions } from "../../../api/invitation-accept-options.js";
+import { InviterInviteOptions } from "../../../api/inviter-invite-options.js";
+import { InviterOptions } from "../../../api/inviter-options.js";
+import { RegistererRegisterOptions } from "../../../api/registerer-register-options.js";
+import { RegistererUnregisterOptions } from "../../../api/registerer-unregister-options.js";
+import { SimpleUserDelegate } from "./simple-user-delegate.js";
+import { SimpleUserOptions } from "./simple-user-options.js";
 /**
  * A simple SIP user class.
  * @remarks
@@ -13,16 +17,10 @@ import { SimpleUserOptions } from "./simple-user-options";
 export declare class SimpleUser {
     /** Delegate. */
     delegate: SimpleUserDelegate | undefined;
-    private attemptingReconnection;
-    private connectRequested;
     private logger;
-    private held;
-    private muted;
     private options;
-    private registerer;
-    private registerRequested;
     private session;
-    private userAgent;
+    private sessionManager;
     /**
      * Constructs a new instance of the `SimpleUser` class.
      * @param server - SIP WebSocket Server URL.
@@ -80,7 +78,7 @@ export declare class SimpleUser {
      * Send a REGISTER request for the UserAgent's AOR.
      * Resolves when the REGISTER request is sent, otherwise rejects.
      */
-    register(registererOptions?: RegistererOptions, registererRegisterOptions?: RegistererRegisterOptions): Promise<void>;
+    register(registererRegisterOptions?: RegistererRegisterOptions): Promise<void>;
     /**
      * Stop receiving incoming calls.
      * @remarks
@@ -104,7 +102,7 @@ export declare class SimpleUser {
      * @remarks
      * Send a BYE request, CANCEL request or reject response to end the current Session.
      * Resolves when the request/response is sent, otherwise rejects.
-     * Use `onCallTerminated` delegate method to determine if and when call is ended.
+     * Use `onCallHangup` delegate method to determine if and when call is ended.
      */
     hangup(): Promise<void>;
     /**
@@ -121,7 +119,7 @@ export declare class SimpleUser {
      * @remarks
      * Reject an incoming INVITE request.
      * Resolves with the response is sent, otherwise rejects.
-     * Use `onCallTerminated` delegate method to determine if and when call is ended.
+     * Use `onCallHangup` delegate method to determine if and when call is ended.
      */
     decline(): Promise<void>;
     /**
@@ -145,7 +143,7 @@ export declare class SimpleUser {
     /**
      * Hold state.
      * @remarks
-     * True if session media is on hold.
+     * True if session is on hold.
      */
     isHeld(): boolean;
     /**
@@ -180,48 +178,4 @@ export declare class SimpleUser {
      * @param destination - The target destination for the message. A SIP address to send the MESSAGE to.
      */
     message(destination: string, message: string): Promise<void>;
-    /** Media constraints. */
-    private get constraints();
-    /**
-     * Attempt reconnection up to `maxReconnectionAttempts` times.
-     * @param reconnectionAttempt - Current attempt number.
-     */
-    private attemptReconnection;
-    /** Helper function to remove media from html elements. */
-    private cleanupMedia;
-    /** Helper function to enable/disable media tracks. */
-    private enableReceiverTracks;
-    /** Helper function to enable/disable media tracks. */
-    private enableSenderTracks;
-    /**
-     * Setup session delegate and state change handler.
-     * @param session - Session to setup
-     * @param referralInviterOptions - Options for any Inviter created as result of a REFER.
-     */
-    private initSession;
-    /** Helper function to init send then send invite. */
-    private sendInvite;
-    /**
-     * Puts Session on hold.
-     * @param hold - Hold on if true, off if false.
-     */
-    private setHold;
-    /**
-     * Puts Session on mute.
-     * @param mute - Mute on if true, off if false.
-     */
-    private setMute;
-    /** Helper function to attach local media to html elements. */
-    private setupLocalMedia;
-    /** Helper function to attach remote media to html elements. */
-    private setupRemoteMedia;
-    /**
-     * End a session.
-     * @remarks
-     * Send a BYE request, CANCEL request or reject response to end the current Session.
-     * Resolves when the request/response is sent, otherwise rejects.
-     * Use `onCallTerminated` delegate method to determine if and when Session is terminated.
-     */
-    private terminate;
 }
-//# sourceMappingURL=simple-user.d.ts.map

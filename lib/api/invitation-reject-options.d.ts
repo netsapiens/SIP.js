@@ -23,4 +23,3 @@ export interface InvitationRejectOptions {
      */
     reasonPhrase?: string;
 }
-//# sourceMappingURL=invitation-reject-options.d.ts.map

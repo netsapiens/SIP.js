@@ -1,5 +1,5 @@
-import { NameAddrHeader } from "./name-addr-header";
-import { URI } from "./uri";
+import { NameAddrHeader } from "./name-addr-header.js";
+import { URI } from "./uri.js";
 /**
  * Grammar.
  * @internal
@@ -24,4 +24,3 @@ export declare namespace Grammar {
      */
     function URIParse(uri: string): URI | undefined;
 }
-//# sourceMappingURL=grammar.d.ts.map

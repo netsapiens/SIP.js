@@ -1,5 +1,5 @@
-import { Levels } from "./levels";
-import { LoggerFactory } from "./logger-factory";
+import { Levels } from "./levels.js";
+import { LoggerFactory } from "./logger-factory.js";
 /**
  * Logger.
  * @public
@@ -17,4 +17,3 @@ export declare class Logger {
     get level(): Levels;
     set level(newLevel: Levels);
 }
-//# sourceMappingURL=logger.d.ts.map

@@ -1,19 +1,33 @@
-import { AckableIncomingResponseWithSession, Body, IncomingAckRequest, IncomingByeRequest, IncomingInfoRequest, IncomingInviteRequest, IncomingMessageRequest, IncomingNotifyRequest, IncomingPrackRequest, IncomingReferRequest, Logger, NameAddrHeader, OutgoingByeRequest, OutgoingInfoRequest, OutgoingInviteRequest, OutgoingMessageRequest, OutgoingReferRequest, OutgoingRequestDelegate, RequestOptions, Session as SessionDialog, URI } from "../core";
-import { Emitter } from "./emitter";
-import { Inviter } from "./inviter";
-import { InviterOptions } from "./inviter-options";
-import { Notification } from "./notification";
-import { SessionByeOptions } from "./session-bye-options";
-import { SessionDelegate } from "./session-delegate";
-import { SessionDescriptionHandler, SessionDescriptionHandlerModifier, SessionDescriptionHandlerOptions } from "./session-description-handler";
-import { SessionDescriptionHandlerFactory } from "./session-description-handler-factory";
-import { SessionInfoOptions } from "./session-info-options";
-import { SessionInviteOptions } from "./session-invite-options";
-import { SessionMessageOptions } from "./session-message-options";
-import { SessionOptions } from "./session-options";
-import { SessionReferOptions } from "./session-refer-options";
-import { SessionState } from "./session-state";
-import { UserAgent } from "./user-agent";
+import { NameAddrHeader } from "../grammar/name-addr-header.js";
+import { URI } from "../grammar/uri.js";
+import { Body } from "../core/messages/body.js";
+import { Logger } from "../core/log/logger.js";
+import { AckableIncomingResponseWithSession } from "../core/messages/methods/invite.js";
+import { IncomingAckRequest } from "../core/messages/methods/ack.js";
+import { IncomingByeRequest, OutgoingByeRequest } from "../core/messages/methods/bye.js";
+import { IncomingInfoRequest, OutgoingInfoRequest } from "../core/messages/methods/info.js";
+import { IncomingInviteRequest, OutgoingInviteRequest } from "../core/messages/methods/invite.js";
+import { IncomingMessageRequest, OutgoingMessageRequest } from "../core/messages/methods/message.js";
+import { IncomingNotifyRequest } from "../core/messages/methods/notify.js";
+import { IncomingPrackRequest } from "../core/messages/methods/prack.js";
+import { IncomingReferRequest, OutgoingReferRequest } from "../core/messages/methods/refer.js";
+import { OutgoingRequestDelegate, RequestOptions } from "../core/messages/outgoing-request.js";
+import { Session as SessionDialog } from "../core/session/session.js";
+import { Emitter } from "./emitter.js";
+import { Inviter } from "./inviter.js";
+import { InviterOptions } from "./inviter-options.js";
+import { Notification } from "./notification.js";
+import { SessionByeOptions } from "./session-bye-options.js";
+import { SessionDelegate } from "./session-delegate.js";
+import { SessionDescriptionHandler, SessionDescriptionHandlerModifier, SessionDescriptionHandlerOptions } from "./session-description-handler.js";
+import { SessionDescriptionHandlerFactory } from "./session-description-handler-factory.js";
+import { SessionInfoOptions } from "./session-info-options.js";
+import { SessionInviteOptions } from "./session-invite-options.js";
+import { SessionMessageOptions } from "./session-message-options.js";
+import { SessionOptions } from "./session-options.js";
+import { SessionReferOptions } from "./session-refer-options.js";
+import { SessionState } from "./session-state.js";
+import { UserAgent } from "./user-agent.js";
 /**
  * A session provides real time communication between one or more participants.
  *
@@ -357,4 +371,3 @@ export declare abstract class Session {
     private referExtraHeaders;
     private referToString;
 }
-//# sourceMappingURL=session.d.ts.map

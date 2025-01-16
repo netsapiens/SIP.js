@@ -1,4 +1,4 @@
-import { IncomingMessage } from "./incoming-message";
+import { IncomingMessage } from "./incoming-message.js";
 /**
  * Incoming response message.
  * @public
@@ -8,4 +8,3 @@ export declare class IncomingResponseMessage extends IncomingMessage {
     reasonPhrase: string | undefined;
     constructor();
 }
-//# sourceMappingURL=incoming-response-message.d.ts.map

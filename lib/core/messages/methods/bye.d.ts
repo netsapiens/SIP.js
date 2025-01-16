@@ -1,6 +1,6 @@
-import { IncomingRequest } from "../incoming-request";
-import { IncomingResponse } from "../incoming-response";
-import { OutgoingRequest } from "../outgoing-request";
+import { IncomingRequest } from "../incoming-request.js";
+import { IncomingResponse } from "../incoming-response.js";
+import { OutgoingRequest } from "../outgoing-request.js";
 /**
  * Incoming BYE request.
  * @public
@@ -19,4 +19,3 @@ export interface IncomingByeResponse extends IncomingResponse {
  */
 export interface OutgoingByeRequest extends OutgoingRequest {
 }
-//# sourceMappingURL=bye.d.ts.map

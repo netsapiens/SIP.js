@@ -1,4 +1,4 @@
-import { Exception } from "../../core";
+import { Exception } from "../../core/exceptions/exception.js";
 /**
  * An exception indicating an unsupported content type prevented execution.
  * @public
@@ -6,4 +6,3 @@ import { Exception } from "../../core";
 export declare class ContentTypeUnsupportedError extends Exception {
     constructor(message?: string);
 }
-//# sourceMappingURL=content-type-unsupported.d.ts.map

@@ -1,4 +1,4 @@
-import { OutgoingRequestDelegate, RequestOptions } from "../core";
+import { OutgoingRequestDelegate, RequestOptions } from "../core/messages/outgoing-request.js";
 /**
  * Options for {@link Messager.message}.
  * @public
@@ -9,4 +9,3 @@ export interface MessagerMessageOptions {
     /** See `core` API. */
     requestOptions?: RequestOptions;
 }
-//# sourceMappingURL=messager-message-options.d.ts.map

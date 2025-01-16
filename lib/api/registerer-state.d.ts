@@ -19,4 +19,3 @@ export declare enum RegistererState {
     Unregistered = "Unregistered",
     Terminated = "Terminated"
 }
-//# sourceMappingURL=registerer-state.d.ts.map

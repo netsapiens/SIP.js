@@ -1,10 +1,12 @@
-import { IncomingResponseMessage, OutgoingPublishRequest, URI } from "../core";
-import { Emitter } from "./emitter";
-import { PublisherOptions } from "./publisher-options";
-import { PublisherPublishOptions } from "./publisher-publish-options";
-import { PublisherState } from "./publisher-state";
-import { PublisherUnpublishOptions } from "./publisher-unpublish-options";
-import { UserAgent } from "./user-agent";
+import { URI } from "../grammar/uri.js";
+import { IncomingResponseMessage } from "../core/messages/incoming-response-message.js";
+import { OutgoingPublishRequest } from "../core/messages/methods/publish.js";
+import { Emitter } from "./emitter.js";
+import { PublisherOptions } from "./publisher-options.js";
+import { PublisherPublishOptions } from "./publisher-publish-options.js";
+import { PublisherState } from "./publisher-state.js";
+import { PublisherUnpublishOptions } from "./publisher-unpublish-options.js";
+import { UserAgent } from "./user-agent.js";
 /**
  * A publisher publishes a publication (outgoing PUBLISH).
  * @public
@@ -63,4 +65,3 @@ export declare class Publisher {
      */
     private stateTransition;
 }
-//# sourceMappingURL=publisher.d.ts.map

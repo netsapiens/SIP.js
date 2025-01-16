@@ -1,5 +1,5 @@
-import { LoggerFactory } from "../log";
-import { OutgoingRequestMessage } from "./outgoing-request-message";
+import { LoggerFactory } from "../log/logger-factory.js";
+import { OutgoingRequestMessage } from "./outgoing-request-message.js";
 /**
  * Digest Authentication.
  * @internal
@@ -27,7 +27,7 @@ export declare class DigestAuthentication {
      * @param username - Username.
      * @param password - Password.
      */
-    constructor(loggerFactory: LoggerFactory, ha1: string | undefined, username: string | undefined, password: string | Function | undefined);
+    constructor(loggerFactory: LoggerFactory, ha1: string | undefined, username: string | undefined, password: string | (() => string) | undefined);
     /**
      * Performs Digest authentication given a SIP request and the challenge
      * received in a response to that request.
@@ -49,4 +49,3 @@ export declare class DigestAuthentication {
      */
     private calculateResponse;
 }
-//# sourceMappingURL=digest-authentication.d.ts.map

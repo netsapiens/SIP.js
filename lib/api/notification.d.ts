@@ -1,4 +1,6 @@
-import { IncomingNotifyRequest, IncomingRequestMessage, ResponseOptions } from "../core";
+import { IncomingNotifyRequest } from "../core/messages/methods/notify.js";
+import { IncomingRequestMessage } from "../core/messages/incoming-request-message.js";
+import { ResponseOptions } from "../core/messages/outgoing-response.js";
 /**
  * A notification of an event (incoming NOTIFY).
  * @public
@@ -14,4 +16,3 @@ export declare class Notification {
     /** Reject the request. */
     reject(options?: ResponseOptions): Promise<void>;
 }
-//# sourceMappingURL=notification.d.ts.map

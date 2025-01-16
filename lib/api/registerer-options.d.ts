@@ -1,4 +1,4 @@
-import { URI } from "../core";
+import { URI } from "../grammar/uri.js";
 /**
  * Options for {@link Registerer} constructor.
  * @public
@@ -12,7 +12,8 @@ export interface RegistererOptions {
     extraHeaders?: Array<string>;
     /**
      * UUID to provide with "+sip.instance" Contact parameter.
-     * @defaultValue a randomly generated uuid
+     * @defaultValue A randomly generated uuid
+     * @deprecated Use UserAgentOptions.instanceId
      */
     instanceId?: string;
     /**
@@ -44,4 +45,3 @@ export interface RegistererOptions {
      */
     refreshFrequency?: number;
 }
-//# sourceMappingURL=registerer-options.d.ts.map

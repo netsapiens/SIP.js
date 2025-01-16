@@ -1,9 +1,12 @@
-import { IncomingNotifyRequest, IncomingResponse, OutgoingSubscribeRequest, URI } from "../core";
-import { SubscriberOptions } from "./subscriber-options";
-import { SubscriberSubscribeOptions } from "./subscriber-subscribe-options";
-import { Subscription } from "./subscription";
-import { SubscriptionUnsubscribeOptions } from "./subscription-unsubscribe-options";
-import { UserAgent } from "./user-agent";
+import { URI } from "../grammar/uri.js";
+import { IncomingNotifyRequest } from "../core/messages/methods/notify.js";
+import { OutgoingSubscribeRequest } from "../core/messages/methods/subscribe.js";
+import { IncomingResponse } from "../core/messages/incoming-response.js";
+import { SubscriberOptions } from "./subscriber-options.js";
+import { SubscriberSubscribeOptions } from "./subscriber-subscribe-options.js";
+import { Subscription } from "./subscription.js";
+import { SubscriptionUnsubscribeOptions } from "./subscription-unsubscribe-options.js";
+import { UserAgent } from "./user-agent.js";
 /**
  * A subscriber establishes a {@link Subscription} (outgoing SUBSCRIBE).
  *
@@ -22,6 +25,8 @@ import { UserAgent } from "./user-agent";
  * // Add delegate to handle event notifications.
  * subscriber.delegate = {
  *   onNotify: (notification: Notification) => {
+ *     // send a response
+ *     notification.accept();
  *     // handle notification here
  *   }
  * };
@@ -92,4 +97,3 @@ export declare class Subscriber extends Subscription {
     protected onRefresh(request: OutgoingSubscribeRequest): void;
     private initSubscriberRequest;
 }
-//# sourceMappingURL=subscriber.d.ts.map

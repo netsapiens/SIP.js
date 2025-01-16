@@ -22,4 +22,3 @@ export declare function headerize(str: string): string;
  * @internal
  */
 export declare function utf8Length(str: string): number;
-//# sourceMappingURL=utils.d.ts.map

@@ -1,3 +1,2 @@
-export * from "./subscription";
-export * from "./subscription-delegate";
-//# sourceMappingURL=index.d.ts.map
+export * from "./subscription.js";
+export * from "./subscription-delegate.js";

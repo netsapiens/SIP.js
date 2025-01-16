@@ -1,8 +1,8 @@
-import { Emitter } from "../../../api/emitter";
-import { Transport as TransportDefinition } from "../../../api/transport";
-import { TransportState } from "../../../api/transport-state";
-import { Logger } from "../../../core";
-import { TransportOptions } from "./transport-options";
+import { Emitter } from "../../../api/emitter.js";
+import { Transport as TransportDefinition } from "../../../api/transport.js";
+import { TransportState } from "../../../api/transport-state.js";
+import { Logger } from "../../../core/log/logger.js";
+import { TransportOptions } from "./transport-options.js";
 /**
  * Transport for SIP over secure WebSocket (WSS).
  * @public
@@ -123,4 +123,3 @@ export declare class Transport implements TransportDefinition {
      */
     private stopSendingKeepAlives;
 }
-//# sourceMappingURL=transport.d.ts.map

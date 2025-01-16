@@ -1,6 +1,6 @@
-import { IncomingRequest } from "../incoming-request";
-import { IncomingResponse } from "../incoming-response";
-import { OutgoingRequest } from "../outgoing-request";
+import { IncomingRequest } from "../incoming-request.js";
+import { IncomingResponse } from "../incoming-response.js";
+import { OutgoingRequest } from "../outgoing-request.js";
 /**
  * Incoming NOTIFY request.
  * @public
@@ -19,4 +19,3 @@ export interface IncomingNotifyResponse extends IncomingResponse {
  */
 export interface OutgoingNotifyRequest extends OutgoingRequest {
 }
-//# sourceMappingURL=notify.d.ts.map

@@ -1,6 +1,6 @@
-import { IncomingRequest } from "../incoming-request";
-import { IncomingResponse } from "../incoming-response";
-import { OutgoingRequest } from "../outgoing-request";
+import { IncomingRequest } from "../incoming-request.js";
+import { IncomingResponse } from "../incoming-response.js";
+import { OutgoingRequest } from "../outgoing-request.js";
 /**
  * Incoming PRACK request.
  * @public
@@ -19,4 +19,3 @@ export interface IncomingPrackResponse extends IncomingResponse {
  */
 export interface OutgoingPrackRequest extends OutgoingRequest {
 }
-//# sourceMappingURL=prack.d.ts.map

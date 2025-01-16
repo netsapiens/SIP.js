@@ -1,5 +1,5 @@
-import { Session } from "./session";
-import { SessionDescriptionHandler } from "./session-description-handler";
+import { Session } from "./session.js";
+import { SessionDescriptionHandler } from "./session-description-handler.js";
 /**
  * Factory for {@link SessionDescriptionHandler}.
  * @public
@@ -13,4 +13,3 @@ export interface SessionDescriptionHandlerFactory {
      */
     (session: Session, options?: object): SessionDescriptionHandler;
 }
-//# sourceMappingURL=session-description-handler-factory.d.ts.map

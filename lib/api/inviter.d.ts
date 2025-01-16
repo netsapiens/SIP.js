@@ -1,10 +1,14 @@
-import { Logger, NameAddrHeader, OutgoingInviteRequest, OutgoingRequestMessage, URI } from "../core";
-import { InviterCancelOptions } from "./inviter-cancel-options";
-import { InviterInviteOptions } from "./inviter-invite-options";
-import { InviterOptions } from "./inviter-options";
-import { Session } from "./session";
-import { BodyAndContentType } from "./session-description-handler";
-import { UserAgent } from "./user-agent";
+import { NameAddrHeader } from "../grammar/name-addr-header.js";
+import { URI } from "../grammar/uri.js";
+import { OutgoingInviteRequest } from "../core/messages/methods/invite.js";
+import { Logger } from "../core/log/logger.js";
+import { OutgoingRequestMessage } from "../core/messages/outgoing-request-message.js";
+import { InviterCancelOptions } from "./inviter-cancel-options.js";
+import { InviterInviteOptions } from "./inviter-invite-options.js";
+import { InviterOptions } from "./inviter-options.js";
+import { Session } from "./session.js";
+import { BodyAndContentType } from "./session-description-handler.js";
+import { UserAgent } from "./user-agent.js";
 /**
  * An inviter offers to establish a {@link Session} (outgoing INVITE).
  * @public
@@ -234,4 +238,3 @@ export declare class Inviter extends Session {
      */
     private onTrying;
 }
-//# sourceMappingURL=inviter.d.ts.map

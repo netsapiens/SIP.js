@@ -1,5 +1,6 @@
-import { NameAddrHeader, URI } from "../../grammar";
-import { Body } from "./body";
+import { NameAddrHeader } from "../../grammar/name-addr-header.js";
+import { URI } from "../../grammar/uri.js";
+import { Body } from "./body.js";
 /**
  * Outgoing request message options.
  * @public
@@ -92,4 +93,3 @@ export declare class OutgoingRequestMessage {
     setViaHeader(branch: string, transport: string): void;
     toString(): string;
 }
-//# sourceMappingURL=outgoing-request-message.d.ts.map

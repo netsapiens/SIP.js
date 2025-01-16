@@ -4,4 +4,3 @@
  */
 export interface PublisherUnpublishOptions {
 }
-//# sourceMappingURL=publisher-unpublish-options.d.ts.map

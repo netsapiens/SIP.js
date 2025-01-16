@@ -1,4 +1,4 @@
-import { URI } from "../../grammar";
+import { URI } from "../../grammar/uri.js";
 /**
  * Dialog state.
  * @remarks
@@ -32,4 +32,3 @@ export interface DialogState {
     routeSet: Array<string>;
     secure: boolean;
 }
-//# sourceMappingURL=dialog-state.d.ts.map

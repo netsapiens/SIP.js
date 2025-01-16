@@ -1,4 +1,6 @@
-import { IncomingMessageRequest, IncomingRequestMessage, ResponseOptions } from "../core";
+import { IncomingMessageRequest } from "../core/messages/methods/message.js";
+import { IncomingRequestMessage } from "../core/messages/incoming-request-message.js";
+import { ResponseOptions } from "../core/messages/outgoing-response.js";
 /**
  * A received message (incoming MESSAGE).
  * @public
@@ -14,4 +16,3 @@ export declare class Message {
     /** Reject the request. */
     reject(options?: ResponseOptions): Promise<void>;
 }
-//# sourceMappingURL=message.d.ts.map

@@ -1,5 +1,5 @@
-import { Levels } from "./levels";
-import { Logger } from "./logger";
+import { Levels } from "./levels.js";
+import { Logger } from "./logger.js";
 /**
  * Logger.
  * @public
@@ -19,4 +19,3 @@ export declare class LoggerFactory {
     genericLog(levelToLog: Levels, category: string, label: string | undefined, content: any): void;
     private print;
 }
-//# sourceMappingURL=logger-factory.d.ts.map

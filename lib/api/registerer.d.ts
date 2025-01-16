@@ -1,10 +1,10 @@
-import { OutgoingRegisterRequest } from "../core";
-import { Emitter } from "./emitter";
-import { RegistererOptions } from "./registerer-options";
-import { RegistererRegisterOptions } from "./registerer-register-options";
-import { RegistererState } from "./registerer-state";
-import { RegistererUnregisterOptions } from "./registerer-unregister-options";
-import { UserAgent } from "./user-agent";
+import { OutgoingRegisterRequest } from "../core/messages/methods/register.js";
+import { Emitter } from "./emitter.js";
+import { RegistererOptions } from "./registerer-options.js";
+import { RegistererRegisterOptions } from "./registerer-register-options.js";
+import { RegistererState } from "./registerer-state.js";
+import { RegistererUnregisterOptions } from "./registerer-unregister-options.js";
+import { UserAgent } from "./user-agent.js";
 /**
  * A registerer registers a contact for an address of record (outgoing REGISTER).
  * @public
@@ -42,7 +42,6 @@ export declare class Registerer {
     constructor(userAgent: UserAgent, options?: RegistererOptions);
     /** Default registerer options. */
     private static defaultOptions;
-    private static newUUID;
     /**
      * Strip properties with undefined values from options.
      * This is a work around while waiting for missing vs undefined to be addressed (or not)...
@@ -142,4 +141,3 @@ export declare class Registerer {
     /** Hopefully helpful as the standard behavior has been found to be unexpected. */
     private stateError;
 }
-//# sourceMappingURL=registerer.d.ts.map

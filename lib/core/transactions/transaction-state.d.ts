@@ -11,4 +11,3 @@ export declare enum TransactionState {
     Terminated = "Terminated",
     Trying = "Trying"
 }
-//# sourceMappingURL=transaction-state.d.ts.map

@@ -1,4 +1,4 @@
-import { SessionDescriptionHandlerModifier, SessionDescriptionHandlerOptions } from "./session-description-handler";
+import { SessionDescriptionHandlerModifier, SessionDescriptionHandlerOptions } from "./session-description-handler.js";
 /**
  * Options for {@link Invitation.accept}.
  * @public
@@ -17,4 +17,3 @@ export interface InvitationAcceptOptions {
      */
     sessionDescriptionHandlerOptions?: SessionDescriptionHandlerOptions;
 }
-//# sourceMappingURL=invitation-accept-options.d.ts.map

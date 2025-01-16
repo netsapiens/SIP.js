@@ -1,6 +1,8 @@
-import { IncomingMessageRequest, IncomingRequestDelegate, IncomingRequestMessage } from "../messages";
-import { UserAgentCore } from "../user-agent-core";
-import { UserAgentServer } from "./user-agent-server";
+import { IncomingMessageRequest } from "../messages/methods/message.js";
+import { IncomingRequestDelegate } from "../messages/incoming-request.js";
+import { IncomingRequestMessage } from "../messages/incoming-request-message.js";
+import { UserAgentCore } from "../user-agent-core/user-agent-core.js";
+import { UserAgentServer } from "./user-agent-server.js";
 /**
  * MESSAGE UAS.
  * @public
@@ -8,4 +10,3 @@ import { UserAgentServer } from "./user-agent-server";
 export declare class MessageUserAgentServer extends UserAgentServer implements IncomingMessageRequest {
     constructor(core: UserAgentCore, message: IncomingRequestMessage, delegate?: IncomingRequestDelegate);
 }
-//# sourceMappingURL=message-user-agent-server.d.ts.map

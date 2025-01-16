@@ -30,4 +30,3 @@ export declare class Md5 {
     setState(state: any): void;
     end(raw?: boolean): string | Int32Array | undefined;
 }
-//# sourceMappingURL=md5.d.ts.map

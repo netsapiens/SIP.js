@@ -1,15 +1,19 @@
-import { Contact, Logger, LoggerFactory, URI, UserAgentCore } from "../core";
-import { Emitter } from "./emitter";
-import { Inviter } from "./inviter";
-import { InviterOptions } from "./inviter-options";
-import { Publisher } from "./publisher";
-import { Registerer } from "./registerer";
-import { Session } from "./session";
-import { Subscription } from "./subscription";
-import { Transport } from "./transport";
-import { UserAgentDelegate } from "./user-agent-delegate";
-import { UserAgentOptions } from "./user-agent-options";
-import { UserAgentState } from "./user-agent-state";
+import { URI } from "../grammar/uri.js";
+import { Contact } from "../core/user-agent-core/user-agent-core-configuration.js";
+import { Logger } from "../core/log/logger.js";
+import { LoggerFactory } from "../core/log/logger-factory.js";
+import { UserAgentCore } from "../core/user-agent-core/user-agent-core.js";
+import { Emitter } from "./emitter.js";
+import { Inviter } from "./inviter.js";
+import { InviterOptions } from "./inviter-options.js";
+import { Publisher } from "./publisher.js";
+import { Registerer } from "./registerer.js";
+import { Session } from "./session.js";
+import { Subscription } from "./subscription.js";
+import { Transport } from "./transport.js";
+import { UserAgentDelegate } from "./user-agent-delegate.js";
+import { UserAgentOptions } from "./user-agent-options.js";
+import { UserAgentState } from "./user-agent-state.js";
 /**
  * A user agent sends and receives requests using a `Transport`.
  *
@@ -48,6 +52,7 @@ export declare class UserAgent {
         [id: string]: Subscription;
     };
     private _contact;
+    private _instanceId;
     private _state;
     private _stateEventEmitter;
     private _transport;
@@ -67,6 +72,12 @@ export declare class UserAgent {
      * Create a URI instance from a string.
      * @param uri - The string to parse.
      *
+     * @remarks
+     * Returns undefined if the syntax of the URI is invalid.
+     * The syntax must conform to a SIP URI as defined in the RFC.
+     * 25 Augmented BNF for the SIP Protocol
+     * https://tools.ietf.org/html/rfc3261#section-25
+     *
      * @example
      * ```ts
      * const uri = UserAgent.makeURI("sip:edgar@example.com");
@@ -75,6 +86,7 @@ export declare class UserAgent {
     static makeURI(uri: string): URI | undefined;
     /** Default user agent options. */
     private static defaultOptions;
+    private static newUUID;
     /**
      * Strip properties with undefined values from options.
      * This is a work around while waiting for missing vs undefined to be addressed (or not)...
@@ -90,6 +102,10 @@ export declare class UserAgent {
      * User agent contact.
      */
     get contact(): Contact;
+    /**
+     * User agent instance id.
+     */
+    get instanceId(): string;
     /**
      * User agent state.
      */
@@ -127,6 +143,7 @@ export declare class UserAgent {
      *
      * @remarks
      * Resolves if transport connects, otherwise rejects.
+     * Calling `start()` after calling `stop()` will fail if `stop()` has yet to resolve.
      *
      * @example
      * ```ts
@@ -153,6 +170,9 @@ export declare class UserAgent {
      * 5) Transport disconnects.
      * 6) User Agent Core resets.
      * ```
+     * The user agent state transistions to stopped once these steps have been completed.
+     * Calling `start()` after calling `stop()` will fail if `stop()` has yet to resolve.
+     *
      * NOTE: While this is a "graceful shutdown", it can also be very slow one if you
      * are waiting for the returned Promise to resolve. The disposal of the clients and
      * dialogs is done serially - waiting on one to finish before moving on to the next.
@@ -195,7 +215,4 @@ export declare class UserAgent {
      * Transition state.
      */
     private transitionState;
-    /** Unload listener. */
-    private unloadListener;
 }
-//# sourceMappingURL=user-agent.d.ts.map

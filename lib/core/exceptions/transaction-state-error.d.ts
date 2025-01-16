@@ -1,4 +1,4 @@
-import { Exception } from "./exception";
+import { Exception } from "./exception.js";
 /**
  * Indicates that the operation could not be completed given the current transaction state.
  * @public
@@ -6,4 +6,3 @@ import { Exception } from "./exception";
 export declare class TransactionStateError extends Exception {
     constructor(message?: string);
 }
-//# sourceMappingURL=transaction-state-error.d.ts.map

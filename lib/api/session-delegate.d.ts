@@ -1,11 +1,12 @@
-import { IncomingRequestMessage } from "../core";
-import { Ack } from "./ack";
-import { Bye } from "./bye";
-import { Info } from "./info";
-import { Message } from "./message";
-import { Notification } from "./notification";
-import { Referral } from "./referral";
-import { SessionDescriptionHandler } from "./session-description-handler";
+import { IncomingRequestMessage } from "../core/messages/incoming-request-message.js";
+import { Ack } from "./ack.js";
+import { Bye } from "./bye.js";
+import { Cancel } from "./cancel.js";
+import { Info } from "./info.js";
+import { Message } from "./message.js";
+import { Notification } from "./notification.js";
+import { Referral } from "./referral.js";
+import { SessionDescriptionHandler } from "./session-description-handler.js";
 /**
  * Delegate for {@link Session}.
  * @public
@@ -13,6 +14,9 @@ import { SessionDescriptionHandler } from "./session-description-handler";
 export interface SessionDelegate {
     /**
      * Called upon receiving an incoming in dialog ACK request.
+     * @remarks
+     * Includes the ACK confirming an accepted initial Invite
+     * as well as ACKs associated with in dialog INVITE requests.
      * @param ack - The ack.
      */
     onAck?(ack: Ack): void;
@@ -21,6 +25,15 @@ export interface SessionDelegate {
      * @param bye - The bye.
      */
     onBye?(bye: Bye): void;
+    /**
+     * Called upon receiving an incoming CANCEL request.
+     * @remarks
+     * Relevant to an Invitation only. CANCEL reqeusts are being handled as
+     * a special case and there is currently no way to externally impact the
+     * response to the a CANCEL request. See core implementation for details.
+     * @param cancel - The cancel.
+     */
+    onCancel?(cancel: Cancel): void;
     /**
      * Called upon receiving an incoming in dialog INFO request.
      * @param info - The info.
@@ -77,4 +90,3 @@ export interface SessionDelegate {
      */
     onSessionDescriptionHandler?(sessionDescriptionHandler: SessionDescriptionHandler, provisional: boolean): void;
 }
-//# sourceMappingURL=session-delegate.d.ts.map

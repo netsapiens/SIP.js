@@ -1,4 +1,4 @@
-import { URI } from "../core";
+import { URI } from "../grammar/uri.js";
 /**
  * Options for {@link Messager} constructor.
  * @public
@@ -15,4 +15,3 @@ export interface MessagerOptions {
         toUri?: string | URI;
     };
 }
-//# sourceMappingURL=messager-options.d.ts.map

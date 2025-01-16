@@ -1,6 +1,10 @@
-import { SessionDialog } from "../dialogs";
-import { IncomingInviteRequest, IncomingRequestDelegate, IncomingRequestMessage, OutgoingResponse, OutgoingResponseWithSession, ResponseOptions, URI } from "../messages";
-import { UserAgentServer } from "./user-agent-server";
+import { URI } from "../../grammar/uri.js";
+import { SessionDialog } from "../dialogs/session-dialog.js";
+import { IncomingInviteRequest, OutgoingResponseWithSession } from "../messages/methods/invite.js";
+import { IncomingRequestDelegate } from "../messages/incoming-request.js";
+import { IncomingRequestMessage } from "../messages/incoming-request-message.js";
+import { OutgoingResponse, ResponseOptions } from "../messages/outgoing-response.js";
+import { UserAgentServer } from "./user-agent-server.js";
 /**
  * Re-INVITE UAS.
  * @remarks
@@ -39,4 +43,3 @@ export declare class ReInviteUserAgentServer extends UserAgentServer implements 
      */
     reject(options?: ResponseOptions): OutgoingResponse;
 }
-//# sourceMappingURL=re-invite-user-agent-server.d.ts.map

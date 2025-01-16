@@ -1,10 +1,23 @@
-import { Dialog } from "../dialogs";
-import { LoggerFactory } from "../log";
-import { Body, IncomingRequestMessage, IncomingResponseMessage, OutgoingInviteRequest, OutgoingInviteRequestDelegate, OutgoingMessageRequest, OutgoingPublishRequest, OutgoingRegisterRequest, OutgoingRequest, OutgoingRequestDelegate, OutgoingRequestMessage, OutgoingRequestMessageOptions, OutgoingResponse, OutgoingSubscribeRequest, OutgoingSubscribeRequestDelegate, ResponseOptions, URI } from "../messages";
-import { Transport } from "../transport";
-import { SubscribeUserAgentClient, UserAgentClient, UserAgentServer } from "../user-agents";
-import { UserAgentCoreConfiguration } from "./user-agent-core-configuration";
-import { UserAgentCoreDelegate } from "./user-agent-core-delegate";
+import { URI } from "../../grammar/uri.js";
+import { Dialog } from "../dialogs/dialog.js";
+import { LoggerFactory } from "../log/logger-factory.js";
+import { Body } from "../messages/body.js";
+import { IncomingRequestMessage } from "../messages/incoming-request-message.js";
+import { IncomingResponseMessage } from "../messages/incoming-response-message.js";
+import { OutgoingRequest, OutgoingRequestDelegate } from "../messages/outgoing-request.js";
+import { OutgoingRequestMessage, OutgoingRequestMessageOptions } from "../messages/outgoing-request-message.js";
+import { OutgoingResponse, ResponseOptions } from "../messages/outgoing-response.js";
+import { OutgoingInviteRequest, OutgoingInviteRequestDelegate } from "../messages/methods/invite.js";
+import { OutgoingMessageRequest } from "../messages/methods/message.js";
+import { OutgoingPublishRequest } from "../messages/methods/publish.js";
+import { OutgoingRegisterRequest } from "../messages/methods/register.js";
+import { OutgoingSubscribeRequest, OutgoingSubscribeRequestDelegate } from "../messages/methods/subscribe.js";
+import { Transport } from "../transport.js";
+import { SubscribeUserAgentClient } from "../user-agents/subscribe-user-agent-client.js";
+import { UserAgentClient } from "../user-agents/user-agent-client.js";
+import { UserAgentServer } from "../user-agents/user-agent-server.js";
+import { UserAgentCoreConfiguration } from "./user-agent-core-configuration.js";
+import { UserAgentCoreDelegate } from "./user-agent-core-delegate.js";
 /**
  * User Agent Core.
  * @remarks
@@ -177,4 +190,3 @@ export declare class UserAgentCore {
      */
     private receiveResponseFromTransport;
 }
-//# sourceMappingURL=user-agent-core.d.ts.map

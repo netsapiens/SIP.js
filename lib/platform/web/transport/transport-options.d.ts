@@ -28,4 +28,3 @@ export interface TransportOptions {
      */
     traceSip?: boolean;
 }
-//# sourceMappingURL=transport-options.d.ts.map

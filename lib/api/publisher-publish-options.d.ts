@@ -4,4 +4,3 @@
  */
 export interface PublisherPublishOptions {
 }
-//# sourceMappingURL=publisher-publish-options.d.ts.map

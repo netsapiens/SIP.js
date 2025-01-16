@@ -29,4 +29,3 @@ export interface Transport {
      */
     send(message: string): Promise<void>;
 }
-//# sourceMappingURL=transport.d.ts.map

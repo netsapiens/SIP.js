@@ -1,6 +1,8 @@
-import { OutgoingPublishRequest, OutgoingRequestDelegate, OutgoingRequestMessage } from "../messages";
-import { UserAgentCore } from "../user-agent-core";
-import { UserAgentClient } from "./user-agent-client";
+import { OutgoingPublishRequest } from "../messages/methods/publish.js";
+import { OutgoingRequestDelegate } from "../messages/outgoing-request.js";
+import { OutgoingRequestMessage } from "../messages/outgoing-request-message.js";
+import { UserAgentCore } from "../user-agent-core/user-agent-core.js";
+import { UserAgentClient } from "./user-agent-client.js";
 /**
  * PUBLISH UAC.
  * @public
@@ -8,4 +10,3 @@ import { UserAgentClient } from "./user-agent-client";
 export declare class PublishUserAgentClient extends UserAgentClient implements OutgoingPublishRequest {
     constructor(core: UserAgentCore, message: OutgoingRequestMessage, delegate?: OutgoingRequestDelegate);
 }
-//# sourceMappingURL=publish-user-agent-client.d.ts.map

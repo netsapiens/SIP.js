@@ -1,8 +1,9 @@
-import { TransportError } from "../exceptions";
-import { IncomingResponseMessage, OutgoingRequestMessage } from "../messages";
-import { Transport } from "../transport";
-import { ClientTransaction } from "./client-transaction";
-import { ClientTransactionUser } from "./transaction-user";
+import { TransportError } from "../exceptions/transport-error.js";
+import { IncomingResponseMessage } from "../messages/incoming-response-message.js";
+import { OutgoingRequestMessage } from "../messages/outgoing-request-message.js";
+import { Transport } from "../transport.js";
+import { ClientTransaction } from "./client-transaction.js";
+import { ClientTransactionUser } from "./transaction-user.js";
 /**
  * INVITE Client Transaction.
  * @remarks
@@ -114,4 +115,3 @@ export declare class InviteClientTransaction extends ClientTransaction {
      */
     private timerM;
 }
-//# sourceMappingURL=invite-client-transaction.d.ts.map

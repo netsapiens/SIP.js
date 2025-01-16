@@ -86,4 +86,3 @@ export declare class EmitterImpl<T> implements Emitter<T> {
      */
     once(listener: (data: T) => void): void;
 }
-//# sourceMappingURL=emitter.d.ts.map

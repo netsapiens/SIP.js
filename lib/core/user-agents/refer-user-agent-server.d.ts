@@ -1,7 +1,9 @@
-import { SessionDialog } from "../dialogs";
-import { IncomingReferRequest, IncomingRequestDelegate, IncomingRequestMessage } from "../messages";
-import { UserAgentCore } from "../user-agent-core";
-import { UserAgentServer } from "./user-agent-server";
+import { SessionDialog } from "../dialogs/session-dialog.js";
+import { IncomingReferRequest } from "../messages/methods/refer.js";
+import { IncomingRequestDelegate } from "../messages/incoming-request.js";
+import { IncomingRequestMessage } from "../messages/incoming-request-message.js";
+import { UserAgentCore } from "../user-agent-core/user-agent-core.js";
+import { UserAgentServer } from "./user-agent-server.js";
 /**
  * REFER UAS.
  * @public
@@ -14,4 +16,3 @@ export declare class ReferUserAgentServer extends UserAgentServer implements Inc
      */
     constructor(dialogOrCore: SessionDialog | UserAgentCore, message: IncomingRequestMessage, delegate?: IncomingRequestDelegate);
 }
-//# sourceMappingURL=refer-user-agent-server.d.ts.map

@@ -1,5 +1,5 @@
-import { OutgoingRequestDelegate, RequestOptions } from "../core";
-import { Notification } from "./notification";
+import { OutgoingRequestDelegate, RequestOptions } from "../core/messages/outgoing-request.js";
+import { Notification } from "./notification.js";
 /**
  * Options for {@link Session.refer}.
  * @public
@@ -12,4 +12,3 @@ export interface SessionReferOptions {
     /** See `core` API. */
     requestOptions?: RequestOptions;
 }
-//# sourceMappingURL=session-refer-options.d.ts.map

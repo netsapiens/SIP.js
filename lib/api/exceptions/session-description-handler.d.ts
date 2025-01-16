@@ -1,4 +1,4 @@
-import { Exception } from "../../core";
+import { Exception } from "../../core/exceptions/exception.js";
 /**
  * An exception indicating a session description handler error occured.
  * @public
@@ -6,4 +6,3 @@ import { Exception } from "../../core";
 export declare class SessionDescriptionHandlerError extends Exception {
     constructor(message?: string);
 }
-//# sourceMappingURL=session-description-handler.d.ts.map

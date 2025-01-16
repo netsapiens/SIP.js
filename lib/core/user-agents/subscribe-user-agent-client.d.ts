@@ -1,7 +1,9 @@
-import { IncomingResponseMessage, OutgoingRequestMessage, OutgoingSubscribeRequest, OutgoingSubscribeRequestDelegate } from "../messages";
-import { UserAgentCore } from "../user-agent-core";
-import { NotifyUserAgentServer } from "./notify-user-agent-server";
-import { UserAgentClient } from "./user-agent-client";
+import { IncomingResponseMessage } from "../messages/incoming-response-message.js";
+import { OutgoingRequestMessage } from "../messages/outgoing-request-message.js";
+import { OutgoingSubscribeRequest, OutgoingSubscribeRequestDelegate } from "../messages/methods/subscribe.js";
+import { UserAgentCore } from "../user-agent-core/user-agent-core.js";
+import { NotifyUserAgentServer } from "./notify-user-agent-server.js";
+import { UserAgentClient } from "./user-agent-client.js";
 /**
  * SUBSCRIBE UAC.
  * @remarks
@@ -63,4 +65,3 @@ export declare class SubscribeUserAgentClient extends UserAgentClient implements
      */
     private timerN;
 }
-//# sourceMappingURL=subscribe-user-agent-client.d.ts.map

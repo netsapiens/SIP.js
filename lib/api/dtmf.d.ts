@@ -1,5 +1,5 @@
-import { IncomingInfoRequest } from "../core";
-import { Info } from "./info";
+import { IncomingInfoRequest } from "../core/messages/methods/info.js";
+import { Info } from "./info.js";
 /**
  * A DTMF signal (incoming INFO).
  * @deprecated Use `Info`.
@@ -13,4 +13,3 @@ export declare class DTMF extends Info {
     get tone(): string;
     get duration(): number;
 }
-//# sourceMappingURL=dtmf.d.ts.map

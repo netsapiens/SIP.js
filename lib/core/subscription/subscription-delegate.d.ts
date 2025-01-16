@@ -1,4 +1,5 @@
-import { IncomingNotifyRequest, OutgoingSubscribeRequest } from "../messages";
+import { IncomingNotifyRequest } from "../messages/methods/notify.js";
+import { OutgoingSubscribeRequest } from "../messages/methods/subscribe.js";
 /**
  * Subscription delegate.
  * @public
@@ -25,4 +26,3 @@ export interface SubscriptionDelegate {
      */
     onTerminated?(): void;
 }
-//# sourceMappingURL=subscription-delegate.d.ts.map

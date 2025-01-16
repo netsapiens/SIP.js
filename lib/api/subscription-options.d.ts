@@ -1,4 +1,4 @@
-import { SubscriptionDelegate } from "./subscription-delegate";
+import { SubscriptionDelegate } from "./subscription-delegate.js";
 /**
  * Options for {@link Subscription } constructor.
  * @public
@@ -6,4 +6,3 @@ import { SubscriptionDelegate } from "./subscription-delegate";
 export interface SubscriptionOptions {
     delegate?: SubscriptionDelegate;
 }
-//# sourceMappingURL=subscription-options.d.ts.map

@@ -1,4 +1,4 @@
-import { SessionDescriptionHandlerModifier } from "../../../api";
+import { SessionDescriptionHandlerModifier } from "../../../api/session-description-handler.js";
 /**
  * Modifier.
  * @public
@@ -39,4 +39,3 @@ export declare function addMidLines(description: RTCSessionDescriptionInit): Pro
  * @param description - The description that will be modified.
  */
 export declare function holdModifier(description: RTCSessionDescriptionInit): Promise<RTCSessionDescriptionInit>;
-//# sourceMappingURL=modifiers.d.ts.map

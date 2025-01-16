@@ -1,4 +1,6 @@
-import { IncomingByeRequest, IncomingRequestMessage, ResponseOptions } from "../core";
+import { IncomingByeRequest } from "../core/messages/methods/bye.js";
+import { IncomingRequestMessage } from "../core/messages/incoming-request-message.js";
+import { ResponseOptions } from "../core/messages/outgoing-response.js";
 /**
  * A request to end a {@link Session} (incoming BYE).
  * @public
@@ -14,4 +16,3 @@ export declare class Bye {
     /** Reject the request. */
     reject(options?: ResponseOptions): Promise<void>;
 }
-//# sourceMappingURL=bye.d.ts.map

@@ -1,4 +1,4 @@
-import { SessionDescriptionHandlerModifier, SessionDescriptionHandlerOptions } from "./session-description-handler";
+import { SessionDescriptionHandlerModifier, SessionDescriptionHandlerOptions } from "./session-description-handler.js";
 /**
  * Options for {@link Invitation.progress}.
  * @public
@@ -36,4 +36,3 @@ export interface InvitationProgressOptions {
      */
     rel100?: boolean;
 }
-//# sourceMappingURL=invitation-progress-options.d.ts.map

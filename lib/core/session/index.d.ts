@@ -1,3 +1,2 @@
-export * from "./session";
-export * from "./session-delegate";
-//# sourceMappingURL=index.d.ts.map
+export * from "./session.js";
+export * from "./session-delegate.js";

@@ -1,7 +1,7 @@
-import { TransportError } from "../exceptions";
-import { LoggerFactory } from "../log";
-import { IncomingResponseMessage } from "../messages";
-import { TransactionState } from "./transaction-state";
+import { TransportError } from "../exceptions/transport-error.js";
+import { LoggerFactory } from "../log/logger-factory.js";
+import { IncomingResponseMessage } from "../messages/incoming-response-message.js";
+import { TransactionState } from "./transaction-state.js";
 /**
  * Transaction User (TU).
  * @remarks
@@ -70,4 +70,3 @@ export interface ClientTransactionUser extends TransactionUser {
  */
 export interface ServerTransactionUser extends TransactionUser {
 }
-//# sourceMappingURL=transaction-user.d.ts.map

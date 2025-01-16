@@ -1,6 +1,8 @@
-import { SubscriptionDialog } from "../dialogs";
-import { IncomingResponseMessage, OutgoingRequestDelegate, OutgoingSubscribeRequest, RequestOptions } from "../messages";
-import { UserAgentClient } from "./user-agent-client";
+import { SubscriptionDialog } from "../dialogs/subscription-dialog.js";
+import { OutgoingSubscribeRequest } from "../messages/methods/subscribe.js";
+import { IncomingResponseMessage } from "../messages/incoming-response-message.js";
+import { OutgoingRequestDelegate, RequestOptions } from "../messages/outgoing-request.js";
+import { UserAgentClient } from "./user-agent-client.js";
 /**
  * Re-SUBSCRIBE UAC.
  * @public
@@ -15,4 +17,3 @@ export declare class ReSubscribeUserAgentClient extends UserAgentClient implemen
      */
     protected receiveResponse(message: IncomingResponseMessage): void;
 }
-//# sourceMappingURL=re-subscribe-user-agent-client.d.ts.map

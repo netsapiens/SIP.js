@@ -1,7 +1,9 @@
-import { Dialog } from "../dialogs";
-import { IncomingNotifyRequest, IncomingRequestDelegate, IncomingRequestMessage } from "../messages";
-import { UserAgentCore } from "../user-agent-core";
-import { UserAgentServer } from "./user-agent-server";
+import { Dialog } from "../dialogs/dialog.js";
+import { IncomingNotifyRequest } from "../messages/methods/notify.js";
+import { IncomingRequestDelegate } from "../messages/incoming-request.js";
+import { IncomingRequestMessage } from "../messages/incoming-request-message.js";
+import { UserAgentCore } from "../user-agent-core/user-agent-core.js";
+import { UserAgentServer } from "./user-agent-server.js";
 /**
  * NOTIFY UAS.
  * @public
@@ -14,4 +16,3 @@ export declare class NotifyUserAgentServer extends UserAgentServer implements In
      */
     constructor(dialogOrCore: Dialog | UserAgentCore, message: IncomingRequestMessage, delegate?: IncomingRequestDelegate);
 }
-//# sourceMappingURL=notify-user-agent-server.d.ts.map

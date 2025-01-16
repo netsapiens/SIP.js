@@ -12,4 +12,3 @@ export declare enum UserAgentState {
     Started = "Started",
     Stopped = "Stopped"
 }
-//# sourceMappingURL=user-agent-state.d.ts.map

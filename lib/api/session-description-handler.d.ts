@@ -72,4 +72,3 @@ export interface BodyAndContentType {
     /** Message body content type. */
     contentType: string;
 }
-//# sourceMappingURL=session-description-handler.d.ts.map

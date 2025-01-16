@@ -14,4 +14,3 @@ export interface SessionDescriptionHandlerConfiguration {
      */
     peerConnectionConfiguration?: RTCConfiguration;
 }
-//# sourceMappingURL=session-description-handler-configuration.d.ts.map

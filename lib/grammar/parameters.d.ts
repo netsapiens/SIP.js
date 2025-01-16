@@ -14,4 +14,3 @@ export declare class Parameters {
     deleteParam(key: string): string | null | undefined;
     clearParams(): void;
 }
-//# sourceMappingURL=parameters.d.ts.map

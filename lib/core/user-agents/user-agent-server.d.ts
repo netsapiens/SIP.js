@@ -1,8 +1,14 @@
-import { Logger, LoggerFactory } from "../log";
-import { IncomingRequest, IncomingRequestDelegate, IncomingRequestMessage, OutgoingResponse, ResponseOptions, URI } from "../messages";
-import { ServerTransaction, ServerTransactionUser } from "../transactions";
-import { Transport } from "../transport";
-import { UserAgentCore } from "../user-agent-core";
+import { URI } from "../../grammar/uri.js";
+import { Logger } from "../log/logger.js";
+import { LoggerFactory } from "../log/logger-factory.js";
+import { IncomingRequestDelegate } from "../messages/incoming-request.js";
+import { IncomingRequestMessage } from "../messages/incoming-request-message.js";
+import { IncomingRequest } from "../messages/incoming-request.js";
+import { OutgoingResponse, ResponseOptions } from "../messages/outgoing-response.js";
+import { ServerTransaction } from "../transactions/server-transaction.js";
+import { ServerTransactionUser } from "../transactions/transaction-user.js";
+import { Transport } from "../transport.js";
+import { UserAgentCore } from "../user-agent-core/user-agent-core.js";
 declare type ServerTransactionConstructor = new (message: IncomingRequestMessage, transport: Transport, user: ServerTransactionUser) => ServerTransaction;
 /**
  * User Agent Server (UAS).
@@ -77,4 +83,3 @@ export declare class UserAgentServer implements IncomingRequest {
     private init;
 }
 export {};
-//# sourceMappingURL=user-agent-server.d.ts.map

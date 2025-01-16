@@ -1,4 +1,4 @@
-import { NameAddrHeader } from "../../grammar";
+import { NameAddrHeader } from "../../grammar/name-addr-header.js";
 /**
  * Incoming message.
  * @public
@@ -77,4 +77,3 @@ export declare class IncomingMessage {
     setHeader(name: string, value: string): void;
     toString(): string;
 }
-//# sourceMappingURL=incoming-message.d.ts.map

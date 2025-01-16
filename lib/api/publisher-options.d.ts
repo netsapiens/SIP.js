@@ -1,4 +1,4 @@
-import { URI } from "../core";
+import { URI } from "../grammar/uri.js";
 /**
  * Options for {@link Publisher} constructor.
  * @public
@@ -31,4 +31,3 @@ export interface PublisherOptions {
      */
     unpublishOnClose?: boolean;
 }
-//# sourceMappingURL=publisher-options.d.ts.map

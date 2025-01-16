@@ -1,6 +1,6 @@
-import { Body } from "./body";
-import { IncomingResponse } from "./incoming-response";
-import { OutgoingRequestMessage } from "./outgoing-request-message";
+import { Body } from "./body.js";
+import { IncomingResponse } from "./incoming-response.js";
+import { OutgoingRequestMessage } from "./outgoing-request-message.js";
 /**
  * A SIP message sent from a local client to a remote server.
  * @remarks
@@ -65,4 +65,3 @@ export interface RequestOptions {
     /** Body to include in the message. */
     body?: Body;
 }
-//# sourceMappingURL=outgoing-request.d.ts.map

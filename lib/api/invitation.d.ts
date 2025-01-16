@@ -1,9 +1,12 @@
-import { IncomingInviteRequest, IncomingRequestMessage, Logger, NameAddrHeader } from "../core";
-import { InvitationAcceptOptions } from "./invitation-accept-options";
-import { InvitationProgressOptions } from "./invitation-progress-options";
-import { InvitationRejectOptions } from "./invitation-reject-options";
-import { Session } from "./session";
-import { UserAgent } from "./user-agent";
+import { NameAddrHeader } from "../grammar/name-addr-header.js";
+import { IncomingInviteRequest } from "../core/messages/methods/invite.js";
+import { IncomingRequestMessage } from "../core/messages/incoming-request-message.js";
+import { Logger } from "../core/log/logger.js";
+import { InvitationAcceptOptions } from "./invitation-accept-options.js";
+import { InvitationProgressOptions } from "./invitation-progress-options.js";
+import { InvitationRejectOptions } from "./invitation-reject-options.js";
+import { Session } from "./session.js";
+import { UserAgent } from "./user-agent.js";
 /**
  * An invitation is an offer to establish a {@link Session} (incoming INVITE).
  * @public
@@ -177,4 +180,3 @@ export declare class Invitation extends Session {
      */
     private prackNeverArrived;
 }
-//# sourceMappingURL=invitation.d.ts.map

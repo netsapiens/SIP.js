@@ -1,4 +1,4 @@
-import { IncomingResponseMessage } from "./incoming-response-message";
+import { IncomingResponseMessage } from "./incoming-response-message.js";
 /**
  * A SIP message sent from a remote server to a local client.
  * @remarks
@@ -10,4 +10,3 @@ export interface IncomingResponse {
     /** The incoming message. */
     readonly message: IncomingResponseMessage;
 }
-//# sourceMappingURL=incoming-response.d.ts.map

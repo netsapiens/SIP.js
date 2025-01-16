@@ -1,7 +1,8 @@
-import { IncomingResponseMessage, OutgoingRequestMessage } from "../messages";
-import { Transport } from "../transport";
-import { ClientTransaction } from "./client-transaction";
-import { ClientTransactionUser } from "./transaction-user";
+import { IncomingResponseMessage } from "../messages/incoming-response-message.js";
+import { OutgoingRequestMessage } from "../messages/outgoing-request-message.js";
+import { Transport } from "../transport.js";
+import { ClientTransaction } from "./client-transaction.js";
+import { ClientTransactionUser } from "./transaction-user.js";
 /**
  * Non-INVITE Client Transaction.
  * @remarks
@@ -67,4 +68,3 @@ export declare class NonInviteClientTransaction extends ClientTransaction {
      */
     private timerK;
 }
-//# sourceMappingURL=non-invite-client-transaction.d.ts.map

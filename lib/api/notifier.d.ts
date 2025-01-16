@@ -6,4 +6,3 @@
  */
 export declare class Notifier {
 }
-//# sourceMappingURL=notifier.d.ts.map

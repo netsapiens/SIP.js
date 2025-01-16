@@ -1,6 +1,7 @@
-import { SessionDialog } from "../dialogs";
-import { OutgoingInfoRequest, OutgoingRequestDelegate, RequestOptions } from "../messages";
-import { UserAgentClient } from "./user-agent-client";
+import { SessionDialog } from "../dialogs/session-dialog.js";
+import { OutgoingInfoRequest } from "../messages/methods/info.js";
+import { OutgoingRequestDelegate, RequestOptions } from "../messages/outgoing-request.js";
+import { UserAgentClient } from "./user-agent-client.js";
 /**
  * INFO UAC.
  * @public
@@ -8,4 +9,3 @@ import { UserAgentClient } from "./user-agent-client";
 export declare class InfoUserAgentClient extends UserAgentClient implements OutgoingInfoRequest {
     constructor(dialog: SessionDialog, delegate?: OutgoingRequestDelegate, options?: RequestOptions);
 }
-//# sourceMappingURL=info-user-agent-client.d.ts.map

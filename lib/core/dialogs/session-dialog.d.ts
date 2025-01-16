@@ -1,11 +1,26 @@
-import { Body, IncomingRequestMessage, IncomingResponseMessage, OutgoingAckRequest, OutgoingByeRequest, OutgoingInfoRequest, OutgoingInviteRequest, OutgoingInviteRequestDelegate, OutgoingMessageRequest, OutgoingNotifyRequest, OutgoingPrackRequest, OutgoingReferRequest, OutgoingRequestDelegate, OutgoingRequestMessage, RequestOptions } from "../messages";
-import { Session, SessionDelegate, SessionState, SignalingState } from "../session";
-import { InviteClientTransaction, InviteServerTransaction } from "../transactions";
-import { UserAgentCore } from "../user-agent-core";
-import { ReInviteUserAgentClient } from "../user-agents/re-invite-user-agent-client";
-import { ReInviteUserAgentServer } from "../user-agents/re-invite-user-agent-server";
-import { Dialog } from "./dialog";
-import { DialogState } from "./dialog-state";
+import { Body } from "../messages/body.js";
+import { IncomingRequestMessage } from "../messages/incoming-request-message.js";
+import { IncomingResponseMessage } from "../messages/incoming-response-message.js";
+import { OutgoingAckRequest } from "../messages/methods/ack.js";
+import { OutgoingByeRequest } from "../messages/methods/bye.js";
+import { OutgoingInfoRequest } from "../messages/methods/info.js";
+import { OutgoingInviteRequest, OutgoingInviteRequestDelegate } from "../messages/methods/invite.js";
+import { OutgoingMessageRequest } from "../messages/methods/message.js";
+import { OutgoingNotifyRequest } from "../messages/methods/notify.js";
+import { OutgoingPrackRequest } from "../messages/methods/prack.js";
+import { OutgoingReferRequest } from "../messages/methods/refer.js";
+import { OutgoingRequestDelegate, RequestOptions } from "../messages/outgoing-request.js";
+import { OutgoingRequestMessage } from "../messages/outgoing-request-message.js";
+import { Session, SessionState } from "../session/session.js";
+import { SessionDelegate } from "../session/session-delegate.js";
+import { SignalingState } from "../session/session.js";
+import { InviteClientTransaction } from "../transactions/invite-client-transaction.js";
+import { InviteServerTransaction } from "../transactions/invite-server-transaction.js";
+import { UserAgentCore } from "../user-agent-core/user-agent-core.js";
+import { ReInviteUserAgentClient } from "../user-agents/re-invite-user-agent-client.js";
+import { ReInviteUserAgentServer } from "../user-agents/re-invite-user-agent-server.js";
+import { Dialog } from "./dialog.js";
+import { DialogState } from "./dialog-state.js";
 /**
  * Session Dialog.
  * @public
@@ -194,4 +209,3 @@ export declare class SessionDialog extends Dialog implements Session {
     private start2xxRetransmissionTimer;
     private startReInvite2xxRetransmissionTimer;
 }
-//# sourceMappingURL=session-dialog.d.ts.map

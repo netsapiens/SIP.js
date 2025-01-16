@@ -70,4 +70,3 @@ export interface SimpleUserDelegate {
      */
     onServerDisconnect?(error?: Error): void;
 }
-//# sourceMappingURL=simple-user-delegate.d.ts.map

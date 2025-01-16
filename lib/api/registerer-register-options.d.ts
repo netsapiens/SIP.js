@@ -1,4 +1,4 @@
-import { OutgoingRequestDelegate, RequestOptions } from "../core";
+import { OutgoingRequestDelegate, RequestOptions } from "../core/messages/outgoing-request.js";
 /**
  * Options for {@link Registerer.register}.
  * @public
@@ -9,4 +9,3 @@ export interface RegistererRegisterOptions {
     /** See `core` API. */
     requestOptions?: RequestOptions;
 }
-//# sourceMappingURL=registerer-register-options.d.ts.map

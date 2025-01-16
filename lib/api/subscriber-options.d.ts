@@ -1,4 +1,4 @@
-import { SubscriptionOptions } from "./subscription-options";
+import { SubscriptionOptions } from "./subscription-options.js";
 /**
  * Options for {@link Subscriber} constructor.
  * @public
@@ -9,4 +9,3 @@ export interface SubscriberOptions extends SubscriptionOptions {
     body?: string;
     contentType?: string;
 }
-//# sourceMappingURL=subscriber-options.d.ts.map

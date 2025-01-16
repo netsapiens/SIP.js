@@ -1,4 +1,4 @@
-import { Notification } from "./notification";
+import { Notification } from "./notification.js";
 /**
  * Delegate for {@link Subscription}.
  * @public
@@ -10,4 +10,3 @@ export interface SubscriptionDelegate {
      */
     onNotify(notification: Notification): void;
 }
-//# sourceMappingURL=subscription-delegate.d.ts.map

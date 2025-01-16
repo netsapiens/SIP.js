@@ -1,6 +1,10 @@
-import { IncomingInviteRequest, IncomingRequestDelegate, IncomingRequestMessage, OutgoingResponse, OutgoingResponseWithSession, ResponseOptions, URI } from "../messages";
-import { UserAgentCore } from "../user-agent-core";
-import { UserAgentServer } from "./user-agent-server";
+import { URI } from "../../grammar/uri.js";
+import { IncomingInviteRequest, OutgoingResponseWithSession } from "../messages/methods/invite.js";
+import { IncomingRequestDelegate } from "../messages/incoming-request.js";
+import { IncomingRequestMessage } from "../messages/incoming-request-message.js";
+import { OutgoingResponse, ResponseOptions } from "../messages/outgoing-response.js";
+import { UserAgentCore } from "../user-agent-core/user-agent-core.js";
+import { UserAgentServer } from "./user-agent-server.js";
 /**
  * INVITE UAS.
  * @remarks
@@ -75,4 +79,3 @@ export declare class InviteUserAgentServer extends UserAgentServer implements In
      */
     reject(options?: ResponseOptions): OutgoingResponse;
 }
-//# sourceMappingURL=invite-user-agent-server.d.ts.map

@@ -1,4 +1,4 @@
-import { Exception } from "../../core";
+import { Exception } from "../../core/exceptions/exception.js";
 /**
  * An exception indicating the session terminated before the action completed.
  * @public
@@ -6,4 +6,3 @@ import { Exception } from "../../core";
 export declare class SessionTerminatedError extends Exception {
     constructor();
 }
-//# sourceMappingURL=session-terminated.d.ts.map

@@ -1,5 +1,4 @@
-export * from "./dialog";
-export * from "./dialog-state";
-export * from "./session-dialog";
-export * from "./subscription-dialog";
-//# sourceMappingURL=index.d.ts.map
+export * from "./dialog.js";
+export * from "./dialog-state.js";
+export * from "./session-dialog.js";
+export * from "./subscription-dialog.js";

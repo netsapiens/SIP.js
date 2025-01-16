@@ -1,4 +1,4 @@
-import { SessionDelegate } from "./session-delegate";
+import { SessionDelegate } from "./session-delegate.js";
 /**
  * Options for {@link Session} constructor.
  * @public
@@ -6,4 +6,3 @@ import { SessionDelegate } from "./session-delegate";
 export interface SessionOptions {
     delegate?: SessionDelegate;
 }
-//# sourceMappingURL=session-options.d.ts.map

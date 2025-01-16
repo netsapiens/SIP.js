@@ -1,6 +1,6 @@
-import { IncomingRequestMessage } from "./incoming-request-message";
-import { IncomingResponseMessage } from "./incoming-response-message";
-import { OutgoingRequestMessage } from "./outgoing-request-message";
+import { IncomingRequestMessage } from "./incoming-request-message.js";
+import { IncomingResponseMessage } from "./incoming-response-message.js";
+import { OutgoingRequestMessage } from "./outgoing-request-message.js";
 /**
  * Message body.
  * @remarks
@@ -62,4 +62,3 @@ export declare function isBody(body: any): body is Body;
  * @internal
  */
 export declare function getBody(message: IncomingRequestMessage | IncomingResponseMessage | OutgoingRequestMessage | Body): Body | undefined;
-//# sourceMappingURL=body.d.ts.map

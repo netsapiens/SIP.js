@@ -8,4 +8,3 @@ export declare enum Levels {
     log = 2,
     debug = 3
 }
-//# sourceMappingURL=levels.d.ts.map

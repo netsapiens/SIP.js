@@ -1,7 +1,9 @@
-import { TransportError } from "../exceptions";
-import { IncomingResponseMessage, OutgoingInviteRequest, OutgoingInviteRequestDelegate, OutgoingRequestMessage } from "../messages";
-import { UserAgentCore } from "../user-agent-core";
-import { UserAgentClient } from "./user-agent-client";
+import { TransportError } from "../exceptions/transport-error.js";
+import { IncomingResponseMessage } from "../messages/incoming-response-message.js";
+import { OutgoingInviteRequest, OutgoingInviteRequestDelegate } from "../messages/methods/invite.js";
+import { OutgoingRequestMessage } from "../messages/outgoing-request-message.js";
+import { UserAgentCore } from "../user-agent-core/user-agent-core.js";
+import { UserAgentClient } from "./user-agent-client.js";
 /**
  * INVITE UAC.
  * @remarks
@@ -33,4 +35,3 @@ export declare class InviteUserAgentClient extends UserAgentClient implements Ou
      */
     protected receiveResponse(message: IncomingResponseMessage): void;
 }
-//# sourceMappingURL=invite-user-agent-client.d.ts.map

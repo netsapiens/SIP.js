@@ -1,5 +1,5 @@
-import { IncomingRequestMessage } from "../incoming-request-message";
-import { OutgoingRequestMessage } from "../outgoing-request-message";
+import { IncomingRequestMessage } from "../incoming-request-message.js";
+import { OutgoingRequestMessage } from "../outgoing-request-message.js";
 /**
  * Incoming ACK request.
  * @public
@@ -16,4 +16,3 @@ export interface OutgoingAckRequest {
     /** The outgoing message. */
     readonly message: OutgoingRequestMessage;
 }
-//# sourceMappingURL=ack.d.ts.map

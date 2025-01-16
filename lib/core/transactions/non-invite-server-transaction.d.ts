@@ -1,7 +1,7 @@
-import { IncomingRequestMessage } from "../messages";
-import { Transport } from "../transport";
-import { ServerTransaction } from "./server-transaction";
-import { ServerTransactionUser } from "./transaction-user";
+import { IncomingRequestMessage } from "../messages/incoming-request-message.js";
+import { Transport } from "../transport.js";
+import { ServerTransaction } from "./server-transaction.js";
+import { ServerTransactionUser } from "./transaction-user.js";
 /**
  * Non-INVITE Server Transaction.
  * @remarks
@@ -55,4 +55,3 @@ export declare class NonInviteServerTransaction extends ServerTransaction {
      */
     private timerJ;
 }
-//# sourceMappingURL=non-invite-server-transaction.d.ts.map

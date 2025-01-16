@@ -1,4 +1,4 @@
-import { SessionDescriptionHandlerOptions as SessionDescriptionHandlerOptionsDefinition } from "../../../api";
+import { SessionDescriptionHandlerOptions as SessionDescriptionHandlerOptionsDefinition } from "../../../api/session-description-handler.js";
 /**
  * Options for {@link SessionDescriptionHandler}.
  * @public
@@ -45,4 +45,3 @@ export interface SessionDescriptionHandlerOptions extends SessionDescriptionHand
      */
     onDataChannel?: (dataChannel: RTCDataChannel) => void;
 }
-//# sourceMappingURL=session-description-handler-options.d.ts.map

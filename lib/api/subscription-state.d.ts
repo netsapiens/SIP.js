@@ -17,4 +17,3 @@ export declare enum SubscriptionState {
     Subscribed = "Subscribed",
     Terminated = "Terminated"
 }
-//# sourceMappingURL=subscription-state.d.ts.map

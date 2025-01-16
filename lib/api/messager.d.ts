@@ -1,7 +1,7 @@
-import { URI } from "../core";
-import { MessagerMessageOptions } from "./messager-message-options";
-import { MessagerOptions } from "./messager-options";
-import { UserAgent } from "./user-agent";
+import { URI } from "../grammar/uri.js";
+import { MessagerMessageOptions } from "./messager-message-options.js";
+import { MessagerOptions } from "./messager-options.js";
+import { UserAgent } from "./user-agent.js";
 /**
  * A messager sends a {@link Message} (outgoing MESSAGE).
  * @public
@@ -24,4 +24,3 @@ export declare class Messager {
      */
     message(options?: MessagerMessageOptions): Promise<void>;
 }
-//# sourceMappingURL=messager.d.ts.map

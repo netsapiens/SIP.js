@@ -4,4 +4,3 @@
  */
 export interface SubscriptionSubscribeOptions {
 }
-//# sourceMappingURL=subscription-subscribe-options.d.ts.map

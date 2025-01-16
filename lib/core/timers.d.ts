@@ -18,4 +18,3 @@ export declare const Timers: {
     TIMER_N: number;
     PROVISIONAL_RESPONSE_INTERVAL: number;
 };
-//# sourceMappingURL=timers.d.ts.map

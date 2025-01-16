@@ -1,4 +1,4 @@
-import { SessionDescriptionHandlerConfiguration } from "./session-description-handler-configuration";
+import { SessionDescriptionHandlerConfiguration } from "./session-description-handler-configuration.js";
 /**
  * Options for SessionDescriptionHandlerFactory.
  * @remarks
@@ -7,4 +7,3 @@ import { SessionDescriptionHandlerConfiguration } from "./session-description-ha
  * @public
  */
 export declare type SessionDescriptionHandlerFactoryOptions = SessionDescriptionHandlerConfiguration;
-//# sourceMappingURL=session-description-handler-factory-options.d.ts.map

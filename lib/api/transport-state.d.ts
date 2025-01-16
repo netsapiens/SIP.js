@@ -35,4 +35,3 @@ export declare enum TransportState {
      */
     Disconnected = "Disconnected"
 }
-//# sourceMappingURL=transport-state.d.ts.map
