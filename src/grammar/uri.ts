@@ -59,7 +59,7 @@ export class URI extends Parameters {
     this.normal = {
       scheme: scheme.toLowerCase(),
       user,
-      host: host.toLowerCase(),
+      host: host,
       port
     };
   }
@@ -78,7 +78,7 @@ export class URI extends Parameters {
   get host(): string { return this.normal.host; }
   set host(value: string) {
     this.raw.host = value;
-    this.normal.host = value.toLowerCase();
+    this.normal.host = value;
   }
 
   get aor(): string { return this.normal.user + "@" + this.normal.host; }
