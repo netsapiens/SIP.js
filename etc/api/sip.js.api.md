@@ -827,7 +827,7 @@ export interface UserAgentDelegate {
 export interface UserAgentOptions {
     allowLegacyNotifications?: boolean;
     authorizationHa1?: string;
-    authorizationPassword?: string;
+    authorizationPassword?: string | (() => string);
     authorizationUsername?: string;
     contactName?: string;
     contactParams?: {
