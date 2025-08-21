@@ -12,6 +12,13 @@
   "sideEffects": false,
   "type": "module",
   "types": "./lib/index.d.ts",
+  "exports": {
+    ".": "./lib/index.js",
+    "./session-manager": "./lib/platform/web/session-manager/index.js",
+    "./session-manager/session-manager": "./lib/platform/web/session-manager/session-manager.js",
+    "./cancel": "./lib/api/cancel.js",
+    "./web-audio-session-description-handler": "./lib/platform/web/session-description-handler/web-audio-session-description-handler.js"
+  },
   "homepage": "https://sipjs.com",
   "author": "OnSIP <developer@onsip.com> (https://sipjs.com/aboutus/)",
   "contributors": [
