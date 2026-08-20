@@ -3,12 +3,12 @@ name: CodeQL
 on:
   push:
     branches:
-          - "master"
           - "dev-v45"
+          - "master"
   pull_request:
     branches:
-          - "master"
           - "dev-v45"
+          - "master"
   schedule:
     - cron: '0 2 * * 0'
 
@@ -31,9 +31,6 @@ jobs:
         uses: github/codeql-action/init@v3
         with:
           languages: ${{ matrix.language }}
-
-      - name: Autobuild
-        uses: github/codeql-action/autobuild@v3
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v3
